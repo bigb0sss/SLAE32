@@ -25,7 +25,7 @@ func main() {
 
 	for c := 0; c < len(encodedShellcode); c++ {
 
-		if encodedShellcode[c] < 16 { // Here to check if the Hex value is a single digit.
+		if encodedShellcode[c] < 16 { //Here to check if the Hex value is a single digit.
 
 			fmt.Printf("0x0%x,", encodedShellcode[c])
 
