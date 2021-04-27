@@ -18,5 +18,5 @@ void main() {
     int (*ret)() = (int(*)())egghunter;
     ret();
 
-    return 0;
+    return 0; 
 }
