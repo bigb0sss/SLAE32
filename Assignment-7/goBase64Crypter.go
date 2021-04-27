@@ -54,13 +54,14 @@ func Decrypt(key []byte, encryptedText string) string {
 		panic(err)
 	}
 
-	// Checking BlockSize
-	if len(ciphertext) < aes.BlockSize {
+	// Using IV
+	iv := ciphertext[:aes.BlockSize]
+
+	// Checking BlockSize = IV
+	if len(iv) != aes.BlockSize {
 		panic("[Error] Ciphertext is too short!")
 	}
 
-	// Using IV
-	iv := ciphertext[:aes.BlockSize]
 	ciphertext = ciphertext[aes.BlockSize:]
 
 	// Decryption Process
